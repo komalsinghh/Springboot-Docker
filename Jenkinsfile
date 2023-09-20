@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('DevOpsAssignment') {
-                    bat 'mvn clean install'
+                    bat 'mvn clean package'
                 }
             }
         }
