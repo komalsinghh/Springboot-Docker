@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir('DevOpsAssignment/Springboot-Docker/Springboot-Docker') {
+                dir('DevOpsAssignment/Springboot-Docker/Docker-Springboot') {
                     bat 'mvn clean package'
                 }
             }
