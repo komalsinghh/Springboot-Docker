@@ -35,7 +35,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+	<!--		<plugin>
 	<groupId>com.spotify</groupId>
 		<artifactId>dockerfile-maven-plugin</artifactId>
 			<version>1.4.10</version>
@@ -59,7 +59,7 @@
 			</goals>
 		</execution>
 	</executions>
-</plugin> 
+</plugin> -->
 		</plugins>
 	<finalName>springboot-docker</finalName>
 	</build>
