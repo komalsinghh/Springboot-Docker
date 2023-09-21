@@ -42,6 +42,7 @@
 			<configuration>
 				<username>komalsinghh</username>
 				<password>Shiftlock1234!</password>
+				<dockerfile>Dockerfile</dockerfile>
 				<repository>komalsinghh/${project.build.finalName}.jar</repository>
 				<tag>latest</tag>
 				<buildArgs>
