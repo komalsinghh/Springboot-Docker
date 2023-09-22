@@ -19,7 +19,7 @@ pipeline {
 	stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t komalsinghh/springboot-docker:latest .'
+                    sh 'docker build -t komalsinghh/springboot-docker:latest .'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                    withDockerRegistry(credentialsId: '9aa1ae4e-7308-423f-93a2-c44c3f38a881') {
-  					 bat 'docker image push komalsinghh/springboot-docker:latest'
+  					 sh 'docker image push komalsinghh/springboot-docker:latest'
 						}
 					}
 
