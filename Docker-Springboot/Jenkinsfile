@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    tools{
+    maven "maven3"
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/komalsinghh/Springboot-Docker.git']])
+                           }
+        }
+        stage('Build') {
+            steps {
+                dir('Docker-Springboot') {
+                    bat 'mvn clean install'
+                }
+            }
+        }
+	stage('Build Docker Image') {
+            steps {
+                script {
+                    bat 'docker build -t komalsinghh/springboot-docker:latest .'
+                }
+            }
+        }
+        
+      stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                   withDockerRegistry(credentialsId: '9aa1ae4e-7308-423f-93a2-c44c3f38a881') {
+  					 bat 'docker image push komalsinghh/springboot-docker:latest'
+						}
+					}
+
+            }
+        }
+    }
+}

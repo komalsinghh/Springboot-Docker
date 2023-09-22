@@ -35,33 +35,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-	<!--		<plugin>
-	<groupId>com.spotify</groupId>
-		<artifactId>dockerfile-maven-plugin</artifactId>
-			<version>1.4.10</version>
-			<configuration>
-				<username>komalsinghh</username>
-				<password>Shiftlock1234!</password>
-				<dockerfile>Dockerfile</dockerfile>
-				<repository>komalsinghh/${project.build.finalName}.jar</repository>
-				<tag>latest</tag>
-				<buildArgs>
-					<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-			</buildArgs>
-		   </configuration>
-		<executions>
-	<execution>
-	<phase>install</phase>
-		<id>tag-version</id>
-		   <goals>
-			<goal>build</goal>
-				<goal>push</goal>
-			</goals>
-		</execution>
-	</executions>
-</plugin> -->
 		</plugins>
-	<finalName>springboot-docker</finalName>
+	<finalName>docker-springboot</finalName>
 	</build>
 
 </project>
