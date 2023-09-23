@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                
-                    sh 'docker build -t komalsinghh/springboot-docker:latest .'
+                    sh 'docker build -t komalsinghh/docker-springboot:latest .'
                 
                 }
             }
@@ -29,9 +29,11 @@ pipeline {
       stage('Push Docker Image to Docker Hub') {
             steps {
                 script {
-                   withDockerRegistry(credentialsId: '129e2775-4b9a-428a-bdb6-6eab19482479') {
-  					 sh 'docker image push komalsinghh/springboot-docker:latest'
-						}
+                   withCredentials([string(credentialsId: 'komaldockerhubpwd', variable: 'komaldockerhubpwd')]) {
+  					 	sh 'docker login -u komalsinghh -p ${komaldockerhubpwd}'
+					}
+						
+						sh 'docker image push komalsinghh/docker-springboot:latest'
 					}
 
             }
