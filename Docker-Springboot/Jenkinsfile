@@ -19,7 +19,9 @@ pipeline {
 	stage('Build Docker Image') {
             steps {
                 script {
-               
+               		sh 'pwd'
+                    sh 'ls -la'
+                    sh 'ls -la .'
                     sh 'docker build -t komalsinghh/docker-springboot:latest .'
                 
                 }
