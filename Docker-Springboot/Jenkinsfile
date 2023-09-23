@@ -19,9 +19,9 @@ pipeline {
 	stage('Build Docker Image') {
             steps {
                 script {
-                withDockerRegistry(credentialsId: '5540ca14-5cc8-4570-a2c1-5a98c1806642') {
+               
                     sh 'docker build -t komalsinghh/springboot-docker:latest .'
-                }
+                
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
       stage('Push Docker Image to Docker Hub') {
             steps {
                 script {
-                   withDockerRegistry(credentialsId: '5540ca14-5cc8-4570-a2c1-5a98c1806642') {
+                   withDockerRegistry(credentialsId: '129e2775-4b9a-428a-bdb6-6eab19482479') {
   					 sh 'docker image push komalsinghh/springboot-docker:latest'
 						}
 					}
