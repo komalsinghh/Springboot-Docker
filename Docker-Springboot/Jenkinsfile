@@ -40,7 +40,9 @@ pipeline {
 					}
 
             }
-      stage('SonarQube Scan') {
+            
+        }
+        stage('SonarQube Scan') {
     		steps {
         		script {
             
@@ -51,7 +53,5 @@ pipeline {
         }
     }
 }
-            
-        }
     }
 }
